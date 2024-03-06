@@ -1,0 +1,213 @@
+ ****** HSPICE -- C-2009.09 32-BIT (Aug 24 2009) winnt ******                   
+  Copyright (C) 2009 Synopsys, Inc. All Rights Reserved.                        
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the 
+  terms and conditions of the license agreement from Synopsys.
+  Use of this program is your acceptance to be bound by the 
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: e:\jason\whyee\semeter\analogic\two_stage_opamp\ac_sim_template.sp
+  lic:  
+  lic: FLEXlm: v8.5b 
+  lic: USER:   jason                HOSTNAME: DESKTOP-NP05V42 
+  lic: HOSTID: "a8a159b72f8e 00155d37aea6 001a7dda7113 0a0027000009 7a8cb58aa976
+  
+  lic: Using FLEXlm license file: 
+  lic: 27000@localhost 
+  lic: Checkout 1 hspice 
+  lic: License/Maintenance for hspice will expire on 31-dec-2028/2008.120 
+  lic: FLOATING license(s) on SERVER localhost 
+  lic:   
+ Init: read install configuration file: C:\synopsys\Hspice_C-2009.09\meta.cfg
+1****** HSPICE -- C-2009.09 32-BIT (Aug 24 2009) winnt ******                   
+ ******  
+ * fully differential operational amplifier design ****
+
+  ******  circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xopamp.                         opamp              1.00 
+ 
+
+ 
+
+ **warning** the following singular supplies were terminated to 1 meg resistor 
+   supply       node1            node2
+  eout                    0:out              defined in subckt 0                     0:0                defined in subckt 0               
+      
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 6         bypass  = 2         
+  Opening plot unit= 79
+ file=e:\jason\whyee\semeter\analogic\two_stage_opamp\ac_sim_template.pa0      
+
+1****** HSPICE -- C-2009.09 32-BIT (Aug 24 2009) winnt ******                   
+ ******  
+ * fully differential operational amplifier design ****
+
+  ******  operating point information tnom=  25.000 temp=  27.000 *****
+ ***** operating point status is all       simulation time is     0.       
+    node    =voltage        node    =voltage        node    =voltage
+
+ +0:in      =   0.        0:out     = -73.250098n 0:vcm     = 900.000000m
+ +0:vdd     =   1.800000  0:vin     = 900.000000m 0:vip     = 900.000000m
+ +0:von     =   1.800000  0:vop     =   1.800000  1:n1      =   1.453235 
+ +1:nrcn    =  36.112809m 1:nrcp    =  36.112809m 1:vbn     = 522.000000m
+ +1:vbp1    =   1.236000  1:vbp2    =   1.186000  1:von1    =  36.112809m
+ +1:vop1    =  36.112809m
+
+
+ ****  voltage sources
+
+ subckt                                          xopamp       xopamp      
+ element    0:vvdd       0:vvcm       0:vin1       1:vbp1       1:vbp2    
+  volts      1.800000   900.000000m    0.           1.236000     1.186000 
+  current -110.846645u    0.           0.           0.           0.       
+  power    199.523961u    0.           0.           0.           0.       
+
+ subckt   xopamp      
+ element    1:vbn     
+  volts    522.000000m
+  current    0.       
+  power      0.       
+
+     total voltage source power dissipation=  199.523961u     watts
+
+
+
+ **** resistors
+
+ subckt   xopamp       xopamp      
+ element    1:rzn        1:rzp     
+  r value    6.300000k    6.300000k
+  v drop     0.           0.       
+  current    0.           0.       
+  power      0.           0.       
+
+
+ **** voltage-controlled voltage sources
+
+
+ subckt                                         
+ element    0:ein1       0:ein2       0:eout    
+  volts      0.           0.         -73.250098n
+  current    0.           0.          73.250098f
+
+
+
+
+
+ **** mosfets
+
+
+ subckt   xopamp       xopamp       xopamp       xopamp       xopamp      
+ element    1:m5         1:m1         1:m2         1:m3         1:m4      
+ model      0:p_18.1     0:p_18.1     0:p_18.1     0:n_18.1     0:n_18.1  
+ region     Saturation   Saturation   Saturation   Saturation   Saturation
+  id      -110.840452u  -55.420221u  -55.420221u   55.420226u   55.420226u
+  ibs      1.43151e-20  7.29827e-21  7.29827e-21 -1.19147e-20 -1.19147e-20
+  ibd        2.153098f    4.486060f    4.486060f -143.544290a -143.544290a
+  vgs     -564.000000m -553.234953m -553.234953m  522.000000m  522.000000m
+  vds     -346.765047m   -1.417122    -1.417122    36.112809m   36.112809m
+  vbs        0.           0.           0.           0.           0.       
+  vth     -514.201520m -514.574373m -514.574373m  501.656282m  501.656282m
+  vdsat   -106.778993m -100.253215m -100.253215m   88.753850m   88.753850m
+  vod      -49.798480m  -38.660580m  -38.660580m   20.343718m   20.343718m
+  beta      30.231286m   15.072229m   15.072229m   46.413389m   46.413389m
+  gam eff  557.084640m  557.084640m  557.084640m  507.445998m  507.445998m
+  gm         1.807428m  927.980286u  927.980286u  820.560344u  820.560344u
+  gds       31.084483u    7.378110u    7.378110u    1.141695m    1.141695m
+  gmb      536.293889u  275.349551u  275.349551u  141.393715u  141.393715u
+  cdtot    122.515662f   51.526832f   51.526832f   69.848286f   69.848286f
+  cgtot    203.011762f   98.532888f   98.532888f   79.060559f   79.060559f
+  cstot    266.059610f  128.951378f  128.951378f  100.150875f  100.150875f
+  cbtot    235.490595f  108.179156f  108.179156f  106.257601f  106.257601f
+  cgs      148.079054f   70.168065f   70.168065f   51.159818f   51.159818f
+  cgd       35.962112f   17.938498f   17.938498f   18.525686f   18.525686f
+
+
+
+ subckt   xopamp       xopamp       xopamp       xopamp      
+ element    1:m6         1:m7         1:m8         1:m9      
+ model      0:p_18.1     0:n_18.1     0:p_18.1     0:n_18.1  
+ region       Linear       Cutoff       Linear       Cutoff  
+  id        -6.191504n    3.074110n  -83.152847f    3.074110n
+  ibs      7.91767e-25 -6.36649e-25    0.        -6.36649e-25
+  ibd      1.34965e-20  -96.440776f  1.81290e-25  -96.440776f
+  vgs     -614.000000m   36.112809m -614.000000m   36.112809m
+  vds      -73.251082n    1.800000  -983.879644f    1.800000 
+  vbs        0.           0.           0.           0.       
+  vth     -514.281075m  462.033120m -514.281075m  462.033120m
+  vdsat   -141.289432m   48.810032m -141.289432m   48.810032m
+  vod      -99.718925m -425.920311m  -99.718925m -425.920311m
+  beta     899.532140m  651.292457m  899.532140m  651.292457m
+  gam eff  557.084657m  507.445914m  557.084657m  507.445914m
+  gm        51.368327n  107.156128n  689.884400f  107.156128n
+  gds       84.534294m    1.813478n   84.534341m    1.813478n
+  gmb       15.855263n   19.014327n  212.938585f   19.014327n
+  cdtot      9.474242p  620.851484f    9.474246p  620.851484f
+  cgtot      7.607872p  688.453074f    7.607872p  688.453074f
+  cstot      9.329484p  843.274056f    9.329485p  843.274056f
+  cbtot      7.682497p    1.313843p    7.682497p    1.313843p
+  cgs        4.259683p  209.689503f    4.259682p  209.689503f
+  cgd        3.228494p  209.681997f    3.228496p  209.681997f
+
+
+
+ ******  
+ * fully differential operational amplifier design ****
+
+  ******  ac analysis tnom=  25.000 temp=  27.000 *****
+   unit_gain= failed
+   phase= failed
+   phase_margin= failed                         measure parameter failed
+ gainmax= -61.086134     at= 165.958691x
+             from=   1.000000k    to=   5.011872g
+ power_avg=-199.523961u  from=   1.000000k     to=   5.011872g
+
+          ***** job concluded
+1****** HSPICE -- C-2009.09 32-BIT (Aug 24 2009) winnt ******                   
+ ******  
+ * fully differential operational amplifier design ****
+
+  ******  job statistics summary tnom=  25.000 temp=  27.000 *****
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count                  :     1
+  Available CPU Count                         :    12
+  Actual Model Evaluation(Load) Threads Count :     1
+  Actual Solver Threads Count                 :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =      35 # elements   =      25
+  # resistors   =       3 # capacitors =       4 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       3
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       6
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       9 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1          34
+  ac analysis        0.02         671         671
+  readin             0.06
+  errchk             0.01
+  setup              0.01
+  output             0.00
+
+
+           total memory used          356  kbytes
+           total cpu time            0.10 seconds
+           total elapsed time        0.14 seconds
+           job started at     16:44:07 03/06/2024
+           job ended   at     16:44:07 03/06/2024
+
+
+  lic: Release hspice token(s) 
