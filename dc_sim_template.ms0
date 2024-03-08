@@ -1,4 +1,4 @@
 $DATA1 SOURCE='HSPICE' VERSION='C-2009.09 32-BIT'
 .TITLE '* fully differential operational amplifier design ****'
  top_gain         bottom_gain      temper           alter#            
-    failed           failed          27.000000         1.000000       
+  1.00743e+03     -1.01643e+03       27.000000         1.000000       
