@@ -5,12 +5,12 @@
   terms and conditions of the license agreement from Synopsys.
   Use of this program is your acceptance to be bound by the 
   license agreement. HSPICE is the trademark of Synopsys, Inc.
-  Input File: c:\two_stage_opamp\ac_sim_template.sp                             
+  Input File: e:\jason\whyee\semeter\analogic\two_stage_opamp\ac_sim_template.sp
   lic:  
   lic: FLEXlm: v8.5b 
-  lic: USER:   jason                HOSTNAME: DESKTOP-3NGV65B 
-  lic: HOSTID: "54ab3ab24fc2 00155db47fda 40490f8fddd9 42490f8fddd9 52490f8fddd9
- "
+  lic: USER:   jason                HOSTNAME: DESKTOP-NP05V42 
+  lic: HOSTID: "a8a159b72f8e 001a7dda7113 0a0027000009 7a8cb58aa976 788cb58aa976
+  
   lic: Using FLEXlm license file: 
   lic: 27000@localhost 
   lic: Checkout 1 hspice 
@@ -40,7 +40,7 @@
  ******
  runlvl  = 6         bypass  = 2         
   Opening plot unit= 79
- file=c:\two_stage_opamp\ac_sim_template.pa0                                   
+ file=e:\jason\whyee\semeter\analogic\two_stage_opamp\ac_sim_template.pa0      
 
 1****** HSPICE -- C-2009.09 32-BIT (Aug 24 2009) winnt ******                   
  ******  
@@ -50,21 +50,21 @@
  ***** operating point status is all       simulation time is     0.       
     node    =voltage        node    =voltage        node    =voltage
 
- +0:in      =   0.        0:out     = -13.101524n 0:vcm     = 900.000000m
+ +0:in      =   0.        0:out     =   2.816130n 0:vcm     = 900.000000m
  +0:vdd     =   1.800000  0:vin     = 900.000000m 0:vip     = 900.000000m
- +0:von     = 888.373022m 0:vop     = 888.373009m 1:n1      =   1.497726 
- +1:nrcn    = 604.105504m 1:nrcp    = 604.105505m 1:vbn     = 554.000000m
- +1:vbp1    =   1.172000  1:vbp2    =   1.186000  1:von1    = 604.105505m
- +1:vop1    = 604.105504m
+ +0:von     = 863.483819m 0:vop     = 863.483822m 1:n1      =   1.593162 
+ +1:nrcn    = 731.755090m 1:nrcp    = 731.755090m 1:vbn     = 554.000000m
+ +1:vbp1    =   1.100000  1:vbp2    = 997.000000m 1:von1    = 731.755090m
+ +1:vop1    = 731.755090m
 
 
  ****  voltage sources
 
  subckt                                          xopamp       xopamp      
  element    0:vvdd       0:vvcm       0:vin1       1:vbp1       1:vbp2    
-  volts      1.800000   900.000000m    0.           1.172000     1.186000 
-  current -419.383409u    0.           0.           0.           0.       
-  power    754.890136u    0.           0.           0.           0.       
+  volts      1.800000   900.000000m    0.           1.100000   997.000000m
+  current -616.265361u    0.           0.           0.           0.       
+  power      1.109278m    0.           0.           0.           0.       
 
  subckt   xopamp      
  element    1:vbn     
@@ -72,7 +72,7 @@
   current    0.       
   power      0.       
 
-     total voltage source power dissipation=  754.890136u     watts
+     total voltage source power dissipation=    1.109278m     watts
 
 
 
@@ -91,8 +91,8 @@
 
  subckt                                         
  element    0:ein1       0:ein2       0:eout    
-  volts      0.           0.         -13.101524n
-  current    0.           0.          13.101524f
+  volts      0.           0.           2.816130n
+  current    0.           0.          -2.816130f
 
 
 
@@ -105,26 +105,26 @@
  element    1:m5         1:m1         1:m2         1:m3         1:m4      
  model      0:p_18.1     0:p_18.1     0:p_18.1     0:n_18.1     0:n_18.1  
  region     Saturation   Saturation   Saturation   Saturation   Saturation
-  id       -23.442667u  -11.721331u  -11.721331u   11.721332u   11.721332u
-  ibs      3.53187e-21  1.58327e-21  1.58327e-21 -3.91556e-21 -3.91556e-21
-  ibd      231.202511a    1.740958f    1.740958f -314.344912a -314.344912a
-  vgs     -628.000000m -597.725853m -597.725853m  554.000000m  554.000000m
-  vds     -302.274147m -893.620348m -893.620349m  604.105505m  604.105504m
+  id       -45.680314u  -22.840154u  -22.840154u   22.840155u   22.840155u
+  ibs      6.94371e-21  3.05293e-21  3.05293e-21 -5.73645e-21 -5.73645e-21
+  ibd      151.150422a    1.992804f    1.992804f -789.915471a -789.915471a
+  vgs     -700.000000m -693.162111m -693.162111m  554.000000m  554.000000m
+  vds     -206.837889m -861.407022m -861.407021m  731.755090m  731.755090m
   vbs        0.           0.           0.           0.           0.       
-  vth     -527.995649m -488.530233m -488.530233m  376.875316m  376.875316m
-  vdsat   -143.104807m -126.400391m -126.400391m  168.310513m  168.310513m
-  vod     -100.004351m -109.195621m -109.195621m  177.124684m  177.124684m
-  beta       3.032270m    1.585293m    1.585293m  757.440855u  757.440855u
-  gam eff  557.084623m  557.084651m  557.084651m  507.446125m  507.446125m
-  gm       304.083362u  152.339048u  152.339048u  113.381088u  113.381088u
-  gds        7.488108u  380.774682n  380.774682n    1.275562u    1.275562u
-  gmb       88.643206u   46.329570u   46.329570u   22.437956u   22.437956u
-  cdtot     13.423707f   33.262911f   33.262911f    4.615938f    4.615938f
-  cgtot     23.105658f  256.029233f  256.029233f   28.676558f   28.676558f
-  cstot     30.804749f  293.361064f  293.361064f   31.709264f   31.709264f
-  cbtot     25.668750f  132.119963f  132.119963f   14.212889f   14.212889f
-  cgs       17.705314f  224.543274f  224.543274f   25.354296f   25.354296f
-  cgd        3.819086f   10.779162f   10.779162f    1.145640f    1.145640f
+  vth     -528.783258m -478.049197m -478.049197m  343.008549m  343.008549m
+  vdsat   -200.402740m -200.738219m -200.738219m  188.405183m  188.405183m
+  vod     -171.216742m -215.112914m -215.112914m  210.991451m  210.991451m
+  beta       2.817847m    1.044665m    1.044665m    1.119464m    1.119464m
+  gam eff  557.084588m  557.084647m  557.084647m  507.446063m  507.446063m
+  gm       399.406324u  185.712080u  185.712080u  193.822706u  193.822706u
+  gds       49.429030u  419.023442n  419.023442n    1.670033u    1.670033u
+  gmb      118.519104u   57.806287u   57.806287u   37.705703u   37.705703u
+  cdtot     13.713381f   40.275442f   40.275442f   12.075002f   12.075002f
+  cgtot     22.703057f  556.036644f  556.036644f  143.413799f  143.413799f
+  cstot     30.047831f  631.911939f  631.911939f  152.330325f  152.330325f
+  cbtot     24.718908f  238.987655f  238.987655f   54.759752f   54.759752f
+  cgs       17.579278f  503.580312f  503.580312f  129.139691f  129.139691f
+  cgd        3.877429f   13.027518f   13.027518f    3.061201f    3.061201f
 
 
 
@@ -132,26 +132,26 @@
  element    1:m6         1:m8         1:m7         1:m9      
  model      0:p_18.1     0:p_18.1     0:n_18.1     0:n_18.1  
  region     Saturation   Saturation   Saturation   Saturation
-  id      -197.970367u -197.970366u  197.970367u  197.970366u
-  ibs      2.68607e-20  2.68607e-20 -4.90801e-20 -4.90801e-20
-  ibd        1.665031f    1.665031f   -1.016454f   -1.016454f
-  vgs     -614.000000m -614.000000m  604.105505m  604.105504m
-  vds     -911.626991m -911.626978m  888.373009m  888.373022m
+  id      -285.292519u -285.292519u  285.292519u  285.292520u
+  ibs      4.33664e-20  4.33664e-20 -8.27369e-20 -8.27369e-20
+  ibd      684.363730a  684.363732a -589.840597a -589.840595a
+  vgs     -803.000000m -803.000000m  731.755090m  731.755090m
+  vds     -936.516178m -936.516181m  863.483822m  863.483819m
   vbs        0.           0.           0.           0.       
-  vth     -512.147969m -512.147969m  492.537923m  492.537923m
-  vdsat   -160.328193m -160.328193m  144.547657m  144.547657m
-  vod     -101.852031m -101.852031m  111.567582m  111.567581m
-  beta      17.843453m   17.843453m   18.948774m   18.948774m
-  gam eff  557.084550m  557.084550m  507.447117m  507.447117m
-  gm         2.374323m    2.374323m    2.190981m    2.190981m
-  gds       63.790632u   63.790632u   86.702995u   86.702995u
-  gmb      694.467555u  694.467553u  322.572902u  322.572902u
-  cdtot     30.943763f   30.943763f   12.513975f   12.513975f
-  cgtot     51.679916f   51.679916f   17.714836f   17.714836f
-  cstot     72.512364f   72.512364f   25.417387f   25.417387f
-  cbtot     60.576384f   60.576384f   23.152942f   23.152942f
-  cgs       37.951177f   37.951177f   12.690428f   12.690428f
-  cgd        9.903948f    9.903948f    3.469105f    3.469105f
+  vth     -525.963625m -525.963625m  495.625497m  495.625497m
+  vdsat   -304.168826m -304.168826m  210.265159m  210.265159m
+  vod     -277.036375m -277.036375m  236.129593m  236.129593m
+  beta       5.895542m    5.895542m    9.627099m    9.627099m
+  gam eff  557.084224m  557.084224m  507.449309m  507.449309m
+  gm         1.540529m    1.540529m    1.762949m    1.762949m
+  gds       67.533461u   67.533461u   81.542138u   81.542138u
+  gmb      473.778824u  473.778825u  255.610388u  255.610388u
+  cdtot     11.190221f   11.190221f    6.522992f    6.522992f
+  cgtot     19.001388f   19.001388f    9.142114f    9.142114f
+  cstot     26.990107f   26.990107f   13.250764f   13.250764f
+  cbtot     22.022263f   22.022263f   12.079657f   12.079657f
+  cgs       14.251767f   14.251767f    6.602367f    6.602367f
+  cgd        3.535459f    3.535459f    1.766330f    1.766330f
 
 
 
@@ -159,12 +159,12 @@
  * fully differential operational amplifier design ****
 
   ******  ac analysis tnom=  25.000 temp=  27.000 *****
- unit_gain= 121.540938x
- phase= -97.850845 
- phase_margin=  82.149155 
- gainmax=  62.534242     at=   1.000000k
+ unit_gain= 162.847566x
+ phase=-134.111822 
+ phase_margin=  45.888178 
+ gainmax=  60.432782     at=   1.000000k
              from=   1.000000k    to=   5.011872g
- power_avg=-754.890136u  from=   1.000000k     to=   5.011872g
+ power_avg=  -1.109278m  from=   1.000000k     to=   5.011872g
 
           ***** job concluded
 1****** HSPICE -- C-2009.09 32-BIT (Aug 24 2009) winnt ******                   
@@ -176,7 +176,7 @@
   ******  HSPICE Threads Information  ******
 
   Command Line Threads Count                  :     1
-  Available CPU Count                         :     4
+  Available CPU Count                         :    12
   Actual Model Evaluation(Load) Threads Count :     1
   Actual Solver Threads Count                 :     1
 
@@ -195,19 +195,19 @@
   ******  Runtime Statistics (seconds)  ******
 
   analysis           time    # points   tot. iter  conv.iter
-  op point           0.03           1          49
-  ac analysis        0.12         671         671
-  readin             0.23
-  errchk             0.03
-  setup              0.04
+  op point           0.01           1          50
+  ac analysis        0.02         671         671
+  readin             0.07
+  errchk             0.01
+  setup              0.01
   output             0.00
 
 
            total memory used          356  kbytes
-           total cpu time            0.49 seconds
-           total elapsed time        0.61 seconds
-           job started at     15:40:28 03/08/2024
-           job ended   at     15:40:29 03/08/2024
+           total cpu time            0.13 seconds
+           total elapsed time        0.17 seconds
+           job started at     12:34:49 03/15/2024
+           job ended   at     12:34:49 03/15/2024
 
 
   lic: Release hspice token(s) 
