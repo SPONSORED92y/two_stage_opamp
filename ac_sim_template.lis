@@ -9,7 +9,7 @@
   lic:  
   lic: FLEXlm: v8.5b 
   lic: USER:   jason                HOSTNAME: DESKTOP-NP05V42 
-  lic: HOSTID: "a8a159b72f8e 001a7dda7113 0a0027000009 7a8cb58aa976 788cb58aa976
+  lic: HOSTID: "a8a159b72f8e 00155d88c49b 001a7dda7113 0a0027000009 7a8cb58aa976
   
   lic: Using FLEXlm license file: 
   lic: 27000@localhost 
@@ -196,18 +196,18 @@
 
   analysis           time    # points   tot. iter  conv.iter
   op point           0.01           1          50
-  ac analysis        0.02         671         671
-  readin             0.07
+  ac analysis        0.06         671         671
+  readin             0.09
   errchk             0.01
   setup              0.01
   output             0.00
 
 
            total memory used          356  kbytes
-           total cpu time            0.13 seconds
-           total elapsed time        0.17 seconds
-           job started at     12:34:49 03/15/2024
-           job ended   at     12:34:49 03/15/2024
+           total cpu time            0.21 seconds
+           total elapsed time        0.24 seconds
+           job started at     20:27:56 03/16/2024
+           job ended   at     20:27:56 03/16/2024
 
 
   lic: Release hspice token(s) 
