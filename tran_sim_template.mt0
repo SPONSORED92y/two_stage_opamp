@@ -1,4 +1,4 @@
 $DATA1 SOURCE='HSPICE' VERSION='C-2009.09 32-BIT'
 .TITLE '* fully differential operational amplifier design ****'
  slew_rate        temper           alter#            
-  1.50742e+08       27.000000         1.000000       
+  1.18538e+08       27.000000         1.000000       
