@@ -4,30 +4,31 @@
 $ write your stage1+stage2 here
 
 *Stage1
-m5	n1	vbp1	VDD	VDD	p_18	l=0.28u	w=5u   m=2
-m1	von1	VIP	n1	n1	p_18	l=2.4u	w=18u   m=2
-m2	vop1	VIN	n1	n1	p_18	l=2.4u	w=18u   m=2
-m3	von1	vbn	0	0	n_18	l=2.4u	w=4.47u   m=2
-m4	vop1	vbn	0	0	n_18	l=2.4u	w=4.47u   m=2
+m5	n1	vbp1	VDD	VDD	p_18	l=0.18u	w=3.8u   m=2
+m1	von1	VIP	n1	n1	p_18	l=4.3u	w=60u   m=4
+m2	vop1	VIN	n1	n1	p_18	l=4.3u	w=60u   m=4
+m4	vop1	vbn	0	0	n_18	l=4.3u	w=35.99u   m=2
+m3	von1	vbn	0	0	n_18	l=4.3u	w=35.99u   m=2
 *Stage2
-m6	VOP	vbp2	VDD	VDD	p_18	l=0.18u	w=5u   m=2
-m8	VON	vbp2	VDD	VDD	p_18	l=0.18u	w=5u   m=2
-m7	VOP	von1	0	0	n_18	l=0.18u	w=2.45u   m=2
-m9	VON	vop1	0	0	n_18	l=0.18u	w=2.45u   m=2
+m6	VOP	vbp2	VDD	VDD	p_18	l=0.18u	w=28.5u   m=4
+m8	VON	vbp2	VDD	VDD	p_18	l=0.18u	w=28.5u   m=4
+m7	VOP	von1	0	0	n_18	l=0.18u	w=25u   m=2
+m9	VON	vop1	0	0	n_18	l=0.18u	w=25u   m=2
 ***********************************************************
 $ Bias
-vbp1 vbp1 0 1.1
-vbp2 vbp2 0 0.997
-vbn vbn 0 0.554
-*vopp VOP 0 0.9
-*vonn VON 0 0.9
+vbp1 vbp1 0 1.21
+vbp2 vbp2 0 1.23
+vbn vbn 0 0.37
+* vn1 n1 0 1.195
+* vopp VOP 0 0.9
+* vonn VON 0 0.9
 
 ***********************************************************
 $ write your zero compensation here (you can use real MOS to replace resistor)
-Ccn VON  nrcn 0.1p
-Ccp VOP  nrcp 0.1p
-Rzn nrcn vop1 6.3k
-Rzp nrcp von1 6.3k
+Ccn VON  nrcn 0.43p
+Ccp VOP  nrcp 0.43p
+Rzn nrcn vop1 4.34k
+Rzp nrcp von1 4.34k
 ***********************************************************
 $ write your common-mode feedback here (ideal)
 
